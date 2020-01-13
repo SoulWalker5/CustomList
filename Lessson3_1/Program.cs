@@ -19,6 +19,14 @@ namespace Lessson3_1
             notebookcollection.Add(vasia);
             notebookcollection.Add(kurlik);
 
+            //Console.WriteLine(notebookcollection[1]);
+
+            var pupkin = notebookcollection[1];
+            notebookcollection.Delete(pupkin);
+            //or
+            //notebookcollection.Delete(notebookcollection[1]);
+
+
             //foreach (var notebook in notebookcollection)
             //    Console.WriteLine(notebook);
         }

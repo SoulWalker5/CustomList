@@ -5,35 +5,30 @@ namespace Lessson3_1
 {
     public class CustomList : IEnumerable, ICustomList
     {
+        //public int Counter;
         public Node Head { get; set; } //link on first element
         public Node Tail { get; set; } //link on Last element
         public Notebook this[int index] => throw new NotImplementedException();
         public void Add(Notebook value)
         {
-            //Node node = new Node(value, null);
+            Node node = new Node(value, null);
             if (Head == null)
             {
-                Head = new Node (value, null);
-                Tail = new Node (value, null);
-                //Head.Element.Name = value.Name;
-                //Head.Element = value;
-                //Tail.Element = value;
-            }
-            if (Head.Element != null && Head.NextElement == null)
-            {
-                Head.NextElement = new Node(value, null);
-                Tail.Element = value;
+                Head = node;
+                Tail = node;
+                //Counter = 0;
             }
             else
             {
-
+                Tail.NextElement = node;
+                Tail = node;
+                //Counter++;
             }
         }
 
         public void Delete(Notebook value)
         {
-
-            throw new NotImplementedException(); // set previous index to Node
+            return new CustomListIEnumerator(); // set previous index to Node
         }
 
         public IEnumerator GetEnumerator()
