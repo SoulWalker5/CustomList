@@ -19,8 +19,9 @@ namespace Lessson3_1
             notebookcollection.Add(vasia);
             notebookcollection.Add(kurlik);
 
-            //Console.WriteLine(notebookcollection[1]);
-
+            //Console.WriteLine(notebookcollection[1].Name);
+            //Console.WriteLine(notebookcollection[1].SerialNumber);
+            //Console.ReadKey();
             var pupkin = notebookcollection[1];
             notebookcollection.Delete(pupkin);
             //or
