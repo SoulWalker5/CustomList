@@ -5,7 +5,6 @@ namespace Lessson3_1
 {
     public class CustomList : IEnumerable, ICustomList
     {
-        public int Counter;
         public Node Head { get; set; } //link on first element
         public Node Tail { get; set; } //link on Last element
         public Notebook this[int index]
@@ -31,13 +30,11 @@ namespace Lessson3_1
             {
                 Head = node;
                 Tail = node;
-                Counter = 0;
             }
             else
             {
                 Tail.NextElement = node;
                 Tail = node;
-                Counter++;
             }
         }
 
@@ -68,7 +65,6 @@ namespace Lessson3_1
                             Tail = null;
                         }
                     }
-                    //Counter--;
                 }
                 previous = current;
                 current = current.NextElement;
@@ -77,22 +73,7 @@ namespace Lessson3_1
 
         public IEnumerator GetEnumerator()
         {
-            return new CustomListIEnumerator();
+            return new CustomListIEnumerator(Head);
         }
-
-        //public class CustomListIEnumerator : IEnumerator
-        //{
-        //    public object Current => throw new NotImplementedException();
-
-        //    public bool MoveNext()
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-
-        //    public void Reset()
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //}
     }
 }

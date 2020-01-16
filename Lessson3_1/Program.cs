@@ -22,14 +22,21 @@ namespace Lessson3_1
             //Console.WriteLine(notebookcollection[1].Name);
             //Console.WriteLine(notebookcollection[1].SerialNumber);
             //Console.ReadKey();
+
+            foreach (Notebook notebook in notebookcollection)
+                Console.WriteLine("{0} {1}", notebook.Name, notebook.SerialNumber);
+
             var pupkin = notebookcollection[1];
             notebookcollection.Delete(pupkin);
+            Console.WriteLine("===================");
             //or
             //notebookcollection.Delete(notebookcollection[1]);
 
-
-            //foreach (var notebook in notebookcollection)
-            //    Console.WriteLine(notebook);
+            foreach (Notebook notebook in notebookcollection)
+            {
+                Console.WriteLine("{0} {1}", notebook.Name, notebook.SerialNumber);
+            }
+            Console.ReadKey();
         }
     }
 }

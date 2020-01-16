@@ -9,16 +9,39 @@ namespace Lessson3_1
 {
     public class CustomListIEnumerator : IEnumerator
     {
-        public object Current => throw new NotImplementedException();
+        private Node Head;
+        private Node CurrentNode;
+
+        public CustomListIEnumerator(Node node)
+        {
+            Head = node;
+            CurrentNode = null;
+        }
+        public object Current => Head.Element;
 
         public bool MoveNext()
         {
-            throw new NotImplementedException();
+            if (CurrentNode == null)
+            {
+                CurrentNode = Head;
+                return true;
+                
+            }
+            else if (Head.Element != null && Head.NextElement != null)
+            {
+                Head = Head.NextElement;
+                return true;
+            }
+            else
+            {
+                Reset();
+                return false;
+            }
         }
 
         public void Reset()
         {
-            throw new NotImplementedException();
+            Head = null;
         }
     }
 }
