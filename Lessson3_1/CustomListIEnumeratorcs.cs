@@ -34,7 +34,6 @@ namespace Lessson3_1
             }
             else
             {
-                Reset();
                 return false;
             }
         }
